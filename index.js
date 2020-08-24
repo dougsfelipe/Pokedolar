@@ -15,8 +15,10 @@ var dia = data.getDate();           // 1-31
 var mes = data.getMonth();          // 0-11 (zero=janeiro)
 var ano4 = data.getFullYear();       // 4 dígitos
 
-dia = dia - 2;
+dia = dia - 1;
 diaantigo = dia - 1;
+
+
 
 mes = mes + 1;
 mes = leftPad(mes, 2);
@@ -25,7 +27,28 @@ console.log(mes)
 var str_data = mes + '-' + dia + '-' + ano4;
 var str_data_antiga = mes + '-' + diaantigo + '-' + ano4;
 
+var semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+
+var arr = str_data.split("-");
+console.log(arr);
+var teste3 = new Date(arr[2], arr[0] -1, arr[1]);
+console.log(teste3);
+var dia2 = teste3.getDay();
+console.log(semana[dia2]);
+
+if(semana[dia2] === "Sábado"){
+
+  var str_data = mes + '-' + (dia-1) + '-' + ano4;
+  var str_data_antiga = mes + '-' + (diaantigo-1) + '-' + ano4;
+
+}else if(semana[dia2]==="Domingo"){
+  var str_data = mes + '-' + (dia-2) + '-' + ano4;
+  var str_data_antiga = mes + '-' + (diaantigo-2) + '-' + ano4;
+
+}
+
 console.log(str_data_antiga);
+console.log(str_data);
 tesate = "1";
 
 cotacaoComprar = 0;
