@@ -45,7 +45,7 @@ if(semana[dia2] === "Sábado"){
   var str_data = mes + '-' + (dia-2) + '-' + ano4;
   var str_data_antiga = mes + '-' + (diaantigo-2) + '-' + ano4;
 
-}else if(semana[dia2] === "Segunda"){
+}else if(semana[dia2] === "Segunda-Feira"){
   var str_data_antiga = mes + '-' + (diaantigo-3) + '-' + ano4;
 }
 
