@@ -12,25 +12,64 @@ function colocarZeros(valor, tamanhoTotal, padding) {
 //Prgar data atual
 var data = new Date();
 
-// Guarda cada pedaço em uma variável
-var dia = data.getDate();           // 1-31
-var mes = data.getMonth();          // 0-11 (zero=janeiro)
-var ano4 = data.getFullYear();       // 4 dígitos
 
-//Pega o dia anterio devido a API so pegar o dia anterior
-dia = dia - 1;
-diaantigo = dia - 1;
+//Nova forma de pegar as datas
 
-//Formata o mes de forma correta
-mes = mes + 1;
-mes = colocarZeros(mes, 2);
+//Pega o dia atual
+var hoje = new Date();
+
+var ontem = new Date(hoje.getTime());
+ontem.setDate(hoje.getDate() - 1);
+
+var dd = ontem.getDate();
+var mm = ontem.getMonth()+1; 
+var yyyy = ontem.getFullYear();
+
+if(dd<10) 
+{
+dd='0'+dd;
+}
+
+if(mm<10) 
+{
+mm='0'+mm;
+} 
+
+
+var data_ontem = mm+'-'+dd+'-'+yyyy;
+
+//Pegar data de 2 dias anteriores
+
+var anteontem = new Date(ontem.getTime());
+anteontem.setDate(ontem.getDate() - 1);
+
+var dd2 = anteontem.getDate();
+var mm2 = anteontem.getMonth()+1; 
+var yyyy2 = anteontem.getFullYear();
+
+if(dd2<10) 
+{
+dd2='0'+dd2;
+}
+
+if(mm2<10) 
+{
+mm2='0'+mm2;
+} 
+
+var data_anteontem = mm2+'-'+dd2+'-'+yyyy2;
+
+
+//final da nova forma de pegar as datas
+
+
 
 //Variavel que armazena os dias da semana para checagem futura a partir do numero do index
 var semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
 
 // Formata a data de forma que a API entenda xx-xx-xxxx
-var str_data = mes + '-' + dia + '-' + ano4;  //Data do dia
-var str_data_antiga = mes + '-' + diaantigo + '-' + ano4; //data do dia anterior
+var str_data = data_ontem;  //Data do dia
+var str_data_antiga = data_anteontem; //data do dia anterior
 
 
 
