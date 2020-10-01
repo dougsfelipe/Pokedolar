@@ -104,7 +104,7 @@ dolarantigo = 0;
 function criarCard() {
   card = `
       <div class="pokemon-picture">
-        <img class="pokemonImg" src="${pokemon.sprites.front_default}" alt="Sprite of ${pokemon.name}">
+        <img class="pokemonImg" src="${linkImg}" alt="Sprite of ${linkImg}">
         <div class="infos"> 
         <h1> ${pokemon.name} 
 
@@ -130,6 +130,8 @@ function criarCard() {
 
 //Pega URL da url da cotação do dolar 
 var url = `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='${str_data}'&$format=json`;
+
+
 
 //Abre a request da API do dolar
 request.open('GET', url, true);
@@ -162,6 +164,7 @@ request.onload = function () {
 
     //Define a URL que a PokeAPI vai paegar
     var url2 = `https://pokeapi.co/api/v2/pokemon/${pokemon_base}/`;
+    linkImg = `https://pokeres.bastionbot.org/images/pokemon/${pokemon_base}.png`;
 
     //Faz a requisição para pegar os dados do Pokemon
     fetch(url2)
@@ -181,6 +184,11 @@ request.onload = function () {
       .catch(err => console.log(err));
 
 
+
+    //Pega a nova imagem 
+
+    
+    console.log(linkImg)
 
     //Devido a demora da API devolver os requests, o site tem um timeout de 2 segundos para carregar as informações
     setTimeout(() => {
