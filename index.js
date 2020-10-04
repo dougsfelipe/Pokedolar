@@ -82,15 +82,15 @@ var dia_semana_data = dia_semana_index.getDay();
 //Verifica o dia da semana, porque dia de sabado e domingo a API nao retorna nada
 if (semana[dia_semana_data] === "Sábado") {
 
-  var str_data = mes + '-' + (dia - 1) + '-' + ano4;
-  var str_data_antiga = mes + '-' + (diaantigo - 1) + '-' + ano4;
+  var str_data = mm + '-' + (dd - 1) + '-' + yyyy;
+  var str_data_antiga = mm2 + '-' + (dd2 - 1) + '-' + yyyy;
 
 } else if (semana[dia_semana_data] === "Domingo") {
-  var str_data = mes + '-' + (dia - 2) + '-' + ano4;
-  var str_data_antiga = mes + '-' + (diaantigo - 2) + '-' + ano4;
+  var str_data = mm + '-' + (dd - 2) + '-' + ano4;
+  var str_data_antiga = mm2 + '-' + (dd2 - 2) + '-' + yyyy;
 
 } else if (semana[dia_semana_data] === "Segunda-Feira") {
-  var str_data_antiga = mes + '-' + (diaantigo - 3) + '-' + ano4;
+  var str_data_antiga = mm2 + '-' + (dd2 - 3) + '-' + yyyy;
 }
 
 //Valores Base
