@@ -86,7 +86,7 @@ if (semana[dia_semana_data] === "Sábado") {
   var str_data_antiga = mm2 + '-' + (dd2 - 1) + '-' + yyyy;
 
 } else if (semana[dia_semana_data] === "Domingo") {
-  var str_data = mm + '-' + (dd - 2) + '-' + ano4;
+  var str_data = mm + '-' + (dd - 2) + '-' + yyyy;
   var str_data_antiga = mm2 + '-' + (dd2 - 2) + '-' + yyyy;
 
 } else if (semana[dia_semana_data] === "Segunda-Feira") {
