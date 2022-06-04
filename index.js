@@ -164,7 +164,7 @@ request.onload = function () {
 
     //Define a URL que a PokeAPI vai paegar
     var url2 = `https://pokeapi.co/api/v2/pokemon/${pokemon_base}/`;
-    linkImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
+    linkImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon_base}.png`;
 
     //Faz a requisição para pegar os dados do Pokemon
     fetch(url2)
